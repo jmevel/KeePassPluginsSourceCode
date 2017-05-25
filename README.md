@@ -27,7 +27,7 @@ Therefore I decided to modify a tiny part of the KeePass source code in order to
 6) If you built the project in Debug mode then navigate to the **/KeePass-2.35-Source/KeePass/obj/Debug** directory
 7) Create a folder named **Plugins** and put in it any PLGX files you want
 8) Open a Windows command line and go to your Debug directory
-9) Execute the command `keePass.exe ./../../../EmptyDatabase.kdbx -pw:123`
+9) Execute the command `keePass.exe ./../../../NewDatabase.kdbx -pw:123`
 
 All the plugins' source codes are now in the **/KeePass-2.35-Source/KeePass/obj/Debug/Plugins** directory
 
