@@ -1,6 +1,6 @@
 ## Synopsis
 
-This code automatically extracts KeePass plugins' source code to a specified folder. 
+This code automatically extracts KeePass plugins' source code from the PLGX files. 
 In order to make it work you have to compile your own keepass.exe
 
 Works with KeePass v2.35
