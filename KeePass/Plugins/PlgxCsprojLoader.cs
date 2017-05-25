@@ -41,20 +41,19 @@ namespace KeePass.Plugins
 		private const string XnnItemGroup = "ItemGroup";
 
 		private const string XnnAssemblyName = "AssemblyName";
-		private const string XnnEmbeddedRes = "EmbeddedResource";
+		private const string XnnEmbeddedRes = "EmbeddedResource"; 
 		private const string XnnInclude = "Include";
 		private const string XnnReference = "Reference";
 		private const string XnnCompile = "Compile";
 		private const string XnnHintPath = "HintPath";
 		private const string XnnImport = "Import";
 
-        private const string _pluginsSourceCodeExtractRootFolder = @"C:\keepass\PluginsExtract\";
+        private const string _pluginsSourceCodeExtractRootFolder = "./Plugins/";
 
         private static void ExtractPluginSourceCode(string strDirPath, PlgxPluginInfo plgxOutInfo)
         {
             var rootFolder = _pluginsSourceCodeExtractRootFolder;
-            Directory.CreateDirectory(rootFolder);
-            rootFolder += rootFolder.EndsWith("/") || rootFolder.EndsWith("\\") ? plgxOutInfo.BaseFileName + "/" : "/" + plgxOutInfo.BaseFileName + "/";
+            rootFolder += plgxOutInfo.BaseFileName + "/";
             strDirPath += strDirPath.EndsWith("\\") ? "" : "\\";
             var regex = new Regex(Regex.Escape(strDirPath));
 
@@ -131,10 +130,6 @@ namespace KeePass.Plugins
                 if (xnChild.Name == XnnAssemblyName)
                 {
                     plgx.BaseFileName = xnChild.InnerText;
-
-                    var rootFolder = _pluginsSourceCodeExtractRootFolder;
-                    rootFolder = rootFolder.EndsWith("/") || rootFolder.EndsWith("\\") ? rootFolder + plgx.BaseFileName : rootFolder + "/" + plgx.BaseFileName;
-                    Directory.CreateDirectory(rootFolder);
                 }
 			}
 		}

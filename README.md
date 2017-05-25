@@ -18,19 +18,18 @@ Therefore I decided to modify a tiny part of the KeePass source code in order to
 
 1) Download the KeePass 2.35 source code at http://keepass.info/download.html
 2) Replace the file **/KeePass-2.35-Source/KeePass/Plugins/PlgxCsprojLoader.cs** by the one in this repository
-3) In this file, change the value of the constant *_pluginsSourceCodeExtractRootFolder* at line 51 to point to the folder of your choice
-4) Copy the file **NewDatabase.kdbx** at the root folder of your KeePass source code (*KeePass-2.35-Source*) 
+3) Copy the file **NewDatabase.kdbx** at the root folder of your KeePass source code (*KeePass-2.35-Source*) 
    (You should NOT load the plugins with your personal KeePass database until you reviewed their codes)
-5) Open the solution with Visual Studio and build the project
-6) If you have issues with the signed keys import you can simply disable it:
+4) Open the solution with Visual Studio and build the project
+5) If you have issues with the signed keys import you can simply disable it:
 	- Right-click the project in the solution explorer and select "Properties".
 	- Click on the "Signing" tab and uncheck the "Sign the assembly" checkbox
-7) If you built the project in Debug mode then navigate to the **/KeePass-2.35-Source/KeePass/obj/Debug** directory
-8) Create a folder named **Plugins** and put in it any PLGX files you want
-9) Open a Windows command line and go to your Debug directory
-10) Execute the command `keePass.exe ./../../../EmptyDatabase.kdbx -pw:123`
+6) If you built the project in Debug mode then navigate to the **/KeePass-2.35-Source/KeePass/obj/Debug** directory
+7) Create a folder named **Plugins** and put in it any PLGX files you want
+8) Open a Windows command line and go to your Debug directory
+9) Execute the command `keePass.exe ./../../../EmptyDatabase.kdbx -pw:123`
 
-All the plugins' source code are now in your desired folder
+All the plugins' source codes are now in the **/KeePass-2.35-Source/KeePass/obj/Debug/Plugins** directory
 
 ## License
 
